@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="643.0" prefWidth="928.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="View_Controller.AddProductController">
+    <children>
+        <AnchorPane layoutX="424.0" layoutY="26.0" prefHeight="268.0" prefWidth="466.0">
+            <children>
+                <TableView fx:id="addPartsTable" layoutY="53.0" prefHeight="179.0" prefWidth="465.0">
+                    <columns>
+                        <TableColumn fx:id="partID" prefWidth="51.39999008178711" resizable="false" text="Part ID" />
+                        <TableColumn fx:id="partName" prefWidth="188.59999084472656" resizable="false" text="Part Name" />
+                        <TableColumn fx:id="partStock" prefWidth="101.60003662109375" resizable="false" text="Inventory Level" />
+                        <TableColumn fx:id="partPrice" prefWidth="124.0" resizable="false" text="Price/Cost per Unit" />
+                    </columns>
+               <effect>
+                  <DropShadow />
+               </effect>
+                </TableView>
+                <TextField fx:id="partSearchInput" layoutX="296.0" layoutY="16.0" onAction="#searchPartHandler" prefHeight="26.0" prefWidth="170.0" promptText="Search by ID or part name..." />
+                <Button fx:id="addPart" layoutX="413.0" layoutY="241.0" mnemonicParsing="false" onAction="#addAssociatedPartHandler" text="Add" />
+            <Label layoutY="19.0" prefHeight="20.0" prefWidth="107.0" text="Parts to Add">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            </children>
+        </AnchorPane>
+        <Label layoutX="36.0" layoutY="123.0" text="Name" />
+        <TextField fx:id="addedProductName" layoutX="126.0" layoutY="119.0" prefHeight="26.0" prefWidth="115.0" />
+        <Label layoutX="14.0" layoutY="14.0" text="Add Product">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font></Label>
+      <Label layoutX="38.0" layoutY="81.0" text="Product ID" />
+      <TextField fx:id="addedProductId" layoutX="126.0" layoutY="77.0" prefHeight="26.0" prefWidth="115.0" />
+      <Label layoutX="38.0" layoutY="165.0" text="Inventory" />
+      <TextField fx:id="addedStockInput" layoutX="126.0" layoutY="161.0" prefHeight="26.0" prefWidth="75.0" />
+      <TextField fx:id="addedProductPrice" layoutX="126.0" layoutY="200.0" prefHeight="26.0" prefWidth="75.0" />
+      <TextField fx:id="addedProductMax" layoutX="126.0" layoutY="240.0" prefHeight="26.0" prefWidth="75.0" />
+      <TextField fx:id="addedProductMin" layoutX="285.0" layoutY="240.0" prefHeight="26.0" prefWidth="75.0" />
+      <Label layoutX="36.0" layoutY="204.0" text="Price/Cost" />
+      <Label layoutX="38.0" layoutY="244.0" text="Max" />
+      <Label layoutX="233.0" layoutY="244.0" text="Min" />
+      <AnchorPane layoutX="424.0" layoutY="307.0" prefHeight="320.0" prefWidth="466.0">
+         <children>
+            <TableView fx:id="associatedPartsTable" layoutY="53.0" prefHeight="179.0" prefWidth="465.0">
+               <columns>
+                  <TableColumn fx:id="associatedPartID" prefWidth="51.39999008178711" resizable="false" text="Part ID" />
+                  <TableColumn fx:id="associatedPartName" prefWidth="188.59999084472656" resizable="false" text="Part Name" />
+                  <TableColumn fx:id="associatedPartStock" prefWidth="101.60003662109375" resizable="false" text="Inventory Level" />
+                  <TableColumn fx:id="associatedPartPrice" prefWidth="124.0" resizable="false" text="Price/Cost per Unit" />
+               </columns>
+               <effect>
+                  <DropShadow />
+               </effect>
+            </TableView>
+            <TextField fx:id="associatedPartSearchInput" layoutX="296.0" layoutY="16.0" onAction="#searchPartHandler" prefHeight="26.0" prefWidth="170.0" promptText="Search by ID or part name..." />
+            <Button fx:id="removePart" layoutX="308.0" layoutY="242.0" mnemonicParsing="false" onAction="#removeAssociatedPartHandler" text="Remove Associated Part" />
+              <Button fx:id="saveAddedProduct" layoutX="312.0" layoutY="279.0" mnemonicParsing="false" onAction="#saveAddedProductHandler" text="Save" />
+              <Button fx:id="cancelAddedProduct" layoutX="400.0" layoutY="279.0" mnemonicParsing="false" onAction="#cancelAddedProductHandler" text="Cancel" />
+            <Label layoutY="19.0" text="Parts Associated">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <Label fx:id="errorOutput" layoutX="38.0" layoutY="277.0" prefHeight="131.0" prefWidth="370.0" textFill="RED" />
+    </children>
+</AnchorPane>
